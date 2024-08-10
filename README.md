@@ -16,8 +16,10 @@ To install requirements, run:
 ```sh
 conda create -n lift python=3.8 -y
 conda activate lift
-conda install pytorch==2.0.0 torchvision==0.15.0 pytorch-cuda=11.7 -c pytorch -c nvidia
-conda install tensorboard
+# conda install pytorch==2.0.0 torchvision==0.15.0 pytorch-cuda=11.7 -c pytorch -c nvidia
+# conda install tensorboard
+pip install torch==2.3.1 torchvision==0.18.1 torchaudio==2.3.1 --index-url https://download.pytorch.org/whl/cu118
+pip install tensorboard
 pip install -r requirements.txt
 ```
 
@@ -41,6 +43,8 @@ Most experiments can be reproduced using a single GPU with 20GB of memory (large
 - To further reduce the GPU memory cost, gradient accumulation is recommended. Please refer to [Usage](#usage) for detailed instructions.
 
 ## Quick Start on the CIFAR-100-LT dataset
+
+直接运行训练脚本 (会自动下载数据集):
 
 ```bash
 # run LIFT on CIFAR-100-LT (with imbalanced ratio=100)
