@@ -48,6 +48,7 @@ Most experiments can be reproduced using a single GPU with 20GB of memory (large
 
 ```bash
 # run LIFT on CIFAR-100-LT (with imbalanced ratio=100)
+export CUDA_VISIBLE_DEVICES=5  # 使用 GPU 0 和 1
 python main.py -d cifar100_ir100 -m clip_vit_b16 adaptformer True
 ```
 
