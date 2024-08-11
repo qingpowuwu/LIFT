@@ -19,7 +19,7 @@ conda activate lift
 # conda install pytorch==2.0.0 torchvision==0.15.0 pytorch-cuda=11.7 -c pytorch -c nvidia
 # conda install tensorboard
 pip install torch==2.3.1 torchvision==0.18.1 torchaudio==2.3.1 --index-url https://download.pytorch.org/whl/cu118
-pip install tensorboard
+pip install tensorboard==2.14.0 protobuf==3.20.0
 pip install -r requirements.txt
 ```
 
@@ -112,7 +112,14 @@ Path/To/Dataset
 To reproduce the main result in the paper, please run
 
 ```bash
+# run LIFT on Thyroid 数据集
+export CUDA_VISIBLE_DEVICES=5  # 使用 GPU 0 和 1
+python main.py -d thyroid_2分类 -m clip_vit_b16 adaptformer True
+```
+
+```bash
 # run LIFT on ImageNet-LT
+export CUDA_VISIBLE_DEVICES=5  # 使用 GPU 0 和 1
 python main.py -d imagenet_lt -m clip_vit_b16 adaptformer True
 
 # run LIFT on Places-LT
