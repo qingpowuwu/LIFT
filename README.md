@@ -54,6 +54,12 @@ python main.py -d cifar100_ir100 -m clip_vit_b16 adaptformer True
 
 By running the above command, you can automatically download the CIFAR-100 dataset and run the method (LIFT).
 
+查看训练的结果
+
+```
+tensorboard --logdir=/data/Project_4_Thyroid_Final/15_LIFT-main/output --port=6008
+```
+
 ## Running on Large-scale Long-tailed Datasets
 
 ### Prepare the Dataset
@@ -114,12 +120,12 @@ To reproduce the main result in the paper, please run
 ```bash
 # run LIFT on Thyroid 数据集
 export CUDA_VISIBLE_DEVICES=5  # 使用 GPU 0 和 1
-python main.py -d thyroid_2分类 -m clip_vit_b16 adaptformer True
+python main.py -d Thyroid_2classes -m clip_vit_b16 adaptformer True
 ```
 
 ```bash
 # run LIFT on ImageNet-LT
-export CUDA_VISIBLE_DEVICES=5  # 使用 GPU 0 和 1
+export CUDA_VISIBLE_DEVICES=3,4  # 使用 GPU 0 和 1
 python main.py -d imagenet_lt -m clip_vit_b16 adaptformer True
 
 # run LIFT on Places-LT
