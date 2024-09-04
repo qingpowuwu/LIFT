@@ -21,6 +21,7 @@ conda activate lift
 pip install torch==2.3.1 torchvision==0.18.1 torchaudio==2.3.1 --index-url https://download.pytorch.org/whl/cu118
 pip install tensorboard==2.14.0 protobuf==3.20.0
 pip install -r requirements.txt
+pip install loralib # alphaclip 需要使用
 ```
 
 We encourage installing the latest dependencies. If there are any incompatibilities, please install the dependencies with the following versions.
